@@ -37,27 +37,26 @@ QRectF TriangleItem::boundingRect() const
 void TriangleItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     QPolygon polygon;
-    QRectF rect = boundingRect();
-    QBrush brush(Qt::gray);
+    QBrush brushTri(Qt::gray);
+    polygon << QPoint(10, 18) << QPoint(20,0) << QPoint(0,0);
 
     //basic colision detection
 
     if(scene()->collidingItems(this).isEmpty())
     {
         //no collision
-        brush.setColor(Qt::green);
+        brushTri.setColor(Qt::blue);
     }
     else
     {
         //collision
-        brush.setColor(Qt::red);
+        brushTri.setColor(Qt::red);
 
         //set the position
         doCollision();
     }
 
-   // painter->fillRect(polygon, brush);
-    painter->fillPath(polygon, brush);
+    painter->setBrush(brushTri);
     painter->drawPolygon(polygon);
 }
 

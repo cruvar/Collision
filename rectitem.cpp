@@ -37,25 +37,25 @@ QRectF RectItem::boundingRect() const
 void RectItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     QRectF rect = boundingRect();
-    QBrush brush(Qt::gray);
+    QBrush brushRect(Qt::gray);
 
     //basic colision detection
 
     if(scene()->collidingItems(this).isEmpty())
     {
         //no collision
-        brush.setColor(Qt::green);
+        brushRect.setColor(Qt::green);
     }
     else
     {
         //collision
-        brush.setColor(Qt::red);
+        brushRect.setColor(Qt::red);
 
         //set the position
         doCollision();
     }
 
-    painter->fillRect(rect, brush);
+    painter->fillRect(rect, brushRect);
     painter->drawRect(rect);
 }
 

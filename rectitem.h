@@ -1,5 +1,6 @@
-#ifndef ITEM_H
-#define ITEM_H
+#ifndef RECTITEM_H
+#define RECTITEM_H
+
 
 #include <QDialog>
 #include <QtCore>
@@ -26,4 +27,4 @@ private:
 
 };
 
-#endif // ITEM_H
+#endif // RECTITEM_H

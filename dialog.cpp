@@ -1,6 +1,7 @@
 #include "dialog.h"
 #include "ui_dialog.h"
-#include "item.h"
+#include "rectitem.h"
+#include "triangleitem.h"
 
 
 Dialog::Dialog(QWidget *parent) :
@@ -12,6 +13,8 @@ Dialog::Dialog(QWidget *parent) :
     scene = new QGraphicsScene(this);
     ui->graphicsView->setScene(scene);
     ui->graphicsView->setRenderHint(QPainter::Antialiasing);
+    ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     scene->setSceneRect(-200,-200,300,300);
 
     QPen mypen = QPen(Qt::red);
@@ -26,11 +29,13 @@ Dialog::Dialog(QWidget *parent) :
     scene->addLine(RightLine,mypen);
     scene->addLine(BottomLine,mypen);
 
-    int itemCount = 20;
+    int itemCount = 10;
     for(int i(0); i < itemCount; ++i)
     {
-        Item *myitem = new Item();
-        scene->addItem(myitem);
+        RectItem *rectitem = new RectItem();
+        TriangleItem *triangleitem = new TriangleItem();
+        scene->addItem(rectitem);
+        scene->addItem(triangleitem);
     }
 
 

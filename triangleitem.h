@@ -1,5 +1,6 @@
-#ifndef ITEM_H
-#define ITEM_H
+#ifndef TRIANGLEITEM_H
+#define TRIANGLEITEM_H
+
 
 #include <QDialog>
 #include <QtCore>
@@ -9,10 +10,10 @@
 #include <QGraphicsScene>
 
 
-class RectItem : public QGraphicsItem
+class TriangleItem : public QGraphicsItem
 {
 public:
-    RectItem();
+    TriangleItem();
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
@@ -26,4 +27,4 @@ private:
 
 };
 
-#endif // ITEM_H
+#endif // TRIANGLEITEM_H

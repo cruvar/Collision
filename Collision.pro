@@ -15,10 +15,12 @@ TEMPLATE = app
 SOURCES += main.cpp\
         dialog.cpp \
     rectitem.cpp \
-    triangleitem.cpp
+    triangleitem.cpp \
+    ellipseitem.cpp
 
 HEADERS  += dialog.h \
     rectitem.h \
-    triangleitem.h
+    triangleitem.h \
+    ellipseitem.h
 
 FORMS    += dialog.ui

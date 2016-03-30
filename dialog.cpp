@@ -2,6 +2,7 @@
 #include "ui_dialog.h"
 #include "rectitem.h"
 #include "triangleitem.h"
+#include "ellipseitem.h"
 
 
 Dialog::Dialog(QWidget *parent) :
@@ -34,8 +35,10 @@ Dialog::Dialog(QWidget *parent) :
     {
         RectItem *rectitem = new RectItem();
         TriangleItem *triangleitem = new TriangleItem();
+        EllipseItem *ellipseitem = new EllipseItem();
         scene->addItem(rectitem);
         scene->addItem(triangleitem);
+        scene->addItem(ellipseitem);
     }
 
 
